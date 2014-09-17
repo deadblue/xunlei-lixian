@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from PIL import Image
 from StringIO import StringIO
+
+try:
+    import Image            # built-in PIL
+except:
+    from PIL import Image   # Pillow
 
 __author__ = 'deadblue'
 
