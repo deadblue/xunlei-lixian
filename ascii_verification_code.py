@@ -10,13 +10,13 @@ except:
 __author__ = 'deadblue'
 
 def convert_to_ascii(img_data):
-    return _martix_to_ascii(
+    return _matrix_to_ascii(
         _crop_and_border(
-            _image_to_martix(img_data)
+            _image_to_matrix(img_data)
         )
     )
 
-def _image_to_martix(img_data):
+def _image_to_matrix(img_data):
     img = Image.open(StringIO(img_data)).convert('L')
     w,h = img.size
     martix = []
@@ -79,7 +79,7 @@ def _crop_and_border(martix):
         martix[ri] = row
     return martix
 
-def _martix_to_ascii(martix):
+def _matrix_to_ascii(martix):
     buf = []
     for row in martix:
         rbuf = []
